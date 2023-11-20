@@ -28,4 +28,5 @@ const seedBand = [
   }
 ]
 
+
 module.exports = { seedMusician, seedBand };
