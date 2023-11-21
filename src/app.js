@@ -33,4 +33,28 @@ app.post("/musicians", async (req, res) => {
   res.json(musician);
 });
 
+//PUT 
+
+app.put("/musicians/:id", async (req, res) => {
+
+  const updated = await Musician.update(req.body, {
+    where: { id: req.params.id },
+  });
+
+  console.log("Updated")
+  res.sendStatus(200).send(updated);
+  
+})
+
+
+app.delete("/musicians/:id", async (req, res) => {
+  const deleted = await Musician.destroy( {
+    where: { id: req.params.id },
+  });
+  console.log("Deleted")
+
+})
+
 module.exports = app;
+
+// 
