@@ -16,4 +16,8 @@ describe("./musicians endpoint", () => {
 
     expect(response.body[0].name).toBe("Mick Jagger");
   });
+  test("bands endpoint functions properly", async () => {
+    const response = await request(app).get("/bands");
+    expect(response.statusCode).toBe(200);
+  });
 });
